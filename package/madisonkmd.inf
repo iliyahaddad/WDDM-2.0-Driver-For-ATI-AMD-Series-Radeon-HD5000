@@ -1,0 +1,57 @@
+[Version]
+Signature="$Windows NT$"
+Class=Display
+ClassGUID={4d36e968-e325-11ce-bfc1-08002be10318}
+Provider=%ProviderName%
+DriverVer=10/01/2026,3.0.0.0
+CatalogFile=madisonkmd.cat
+; PnpLockdown=1 requires every file to be listed in the catalog (run Inf2Cat).
+PnpLockdown=1
+
+[DestinationDirs]
+MadisonKmd_CopyFiles=12
+MadisonFirmware_CopyFiles=12,MadisonFirmware
+
+[SourceDisksNames]
+1=%DiskName%,,,
+
+[SourceDisksFiles]
+MadisonKmd.sys=1
+JUNIPER_pfp.bin=1
+JUNIPER_me.bin=1
+JUNIPER_rlc.bin=1
+
+[Manufacturer]
+%ManufacturerName%=Models,NTamd64
+
+[Models.NTamd64]
+%MadisonDeviceName%=Madison_Install,PCI\VEN_1002&DEV_68C0
+
+[Madison_Install]
+FeatureScore=F9
+CopyFiles=MadisonKmd_CopyFiles,MadisonFirmware_CopyFiles
+
+[Madison_Install.Services]
+AddService=MadisonKmd,0x00000002,MadisonKmd_Service
+
+[MadisonKmd_Service]
+DisplayName=%MadisonServiceName%
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%12%\MadisonKmd.sys
+
+[MadisonKmd_CopyFiles]
+MadisonKmd.sys
+
+[MadisonFirmware_CopyFiles]
+JUNIPER_pfp.bin
+JUNIPER_me.bin
+JUNIPER_rlc.bin
+
+[Strings]
+ProviderName="Madison WDDM Project"
+ManufacturerName="Madison Project"
+MadisonDeviceName="ATI/AMD Mobility Radeon HD 5730 (Madison/Juniper)"
+MadisonServiceName="Madison WDDM Kernel Mode Display Driver"
+DiskName="Madison WDDM Driver Package"

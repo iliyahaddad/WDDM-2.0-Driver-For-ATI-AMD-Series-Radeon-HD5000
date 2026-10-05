@@ -1,0 +1,51 @@
+# Visual Studio / WDK build artifacts
+x64/
+*.obj
+*.sys
+*.pdb
+*.exp
+*.lib
+*.dll
+*.exe
+*.log
+*.tlog
+*.ipch
+*.sdf
+*.opensdf
+*.suo
+*.user
+*.userosscache
+*.vcxproj.user
+*.vcproj.user
+
+# Visual Studio
+.vs/
+# NOTE: *.vcxproj, *.sln and *.inf must stay tracked (they are the project/package definition)
+
+# Windows Driver Kit
+*.wdf
+*.cat
+*.mui
+
+# Debug symbols
+*.sym
+*.idb
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Firmware blobs are fetched by tools\fetch-juniper-firmware.ps1, not committed
+firmware/*.bin
+out/
+*.cache
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# WDK test artifacts
+*.hlkx
+*.trx

@@ -226,7 +226,7 @@ Some display/VidPN/child/power logic is adapted from Microsoft's Windows-driver-
 
 ## License
 
-Original project code is released under the MIT License unless a file or third-party notice states otherwise. See `LICENSE` and `THIRD-PARTY-NOTICES.md`.
+See [LICENSE](LICENSE).
 
 ## Disclaimer
 
